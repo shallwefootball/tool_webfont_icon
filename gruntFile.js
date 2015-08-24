@@ -17,7 +17,7 @@ module.exports = function (grunt) {
           stylesheet: 'sass',
 
            // if (ture) Append font file names with unique string to flush browser cache when you update your icons.
-          hashes: false,
+          // hashes: false,
 
           // if convert to woff2, read this 'https://github.com/sapegin/grunt-webfont/wiki/WOFF2-support'
           types: ['eot', 'woff', 'woff2', 'ttf', 'svg'],
@@ -36,9 +36,6 @@ module.exports = function (grunt) {
           //default: 'fontforge' should install fontforge
           // engine: 'node',
           stylesheet: 'sass',
-
-           // if (ture) Append font file names with unique string to flush browser cache when you update your icons.
-          hashes: false,
 
           // if convert to woff2, read this 'https://github.com/sapegin/grunt-webfont/wiki/WOFF2-support'
           types: ['eot', 'woff', 'woff2', 'ttf', 'svg'],
