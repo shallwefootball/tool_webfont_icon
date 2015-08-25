@@ -4,13 +4,10 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     webfont: {
-      amos: {
-        src: 'sample_svg/svg16/*.svg',  // file 16개
-        // src: 'sample_svg/svg50/*.svg',  // file 50개
-        // src: 'sample_svg/svg180/*.svg',  // file 180개
-        // src: 'sample_svg/svg251/*.svg',  // file 251개
-        dest: 'dest/svg16fontforge/font',
-        destCss: 'dest/svg16fontforge/css',
+      n3n: {
+        src: 'iconfont/*.svg',  // file 16개
+        dest: 'dest/iconfont',   //font file destinition
+        destCss: 'sass/',
         options: {
           //default: 'fontforge' should install fontforge
           // engine: 'node',
@@ -22,33 +19,37 @@ module.exports = function (grunt) {
           // if convert to woff2, read this 'https://github.com/sapegin/grunt-webfont/wiki/WOFF2-support'
           types: ['eot', 'woff', 'woff2', 'ttf', 'svg'],
 
-          destHtml: './dest/svg16fontforge/'
-        }
-      },
-      amos2: {
-        // src: 'sample_svg/svg16/*.svg',  // file 16개
-        src: 'sample_svg/svg50/*.svg',  // file 50개
-        // src: 'sample_svg/svg180/*.svg',  // file 180개
-        // src: 'sample_svg/svg251/*.svg',  // file 251개
-        dest: 'dest/svg50fontforge/font',
-        destCss: 'dest/svg50fontforge/css',
-        options: {
-          //default: 'fontforge' should install fontforge
-          // engine: 'node',
-          stylesheet: 'sass',
+          relativeFontPath: '/packages/wizeye-ui-controls/client/stylesheet/stylesheets/iconfont',
 
-          // if convert to woff2, read this 'https://github.com/sapegin/grunt-webfont/wiki/WOFF2-support'
-          types: ['eot', 'woff', 'woff2', 'ttf', 'svg'],
+          destHtml: 'sass/'
 
-          destHtml: './dest/svg50fontforge/'
         }
       }
+      // fontawesome: {
+      //   src: 'sample_svg/svg50/*.svg',  // file 50개
+      //   dest: 'dest/svg50fontforge/font',
+      //   destCss: 'dest/svg50fontforge/css',
+      //   options: {
+      //     //default: 'fontforge' should install fontforge
+      //     // engine: 'node',
+      //     stylesheet: 'sass',
+      //
+      //     // if convert to woff2, read this 'https://github.com/sapegin/grunt-webfont/wiki/WOFF2-support'
+      //     types: ['eot', 'woff', 'woff2', 'ttf', 'svg'],
+      //
+      //     destHtml: './dest/svg50fontforge/'
+      //   }
+      // }
     },
 
-    clean: ['dest/svg50fontforge/*']
+    clean: [
+      'sass/*',
+      'dest/*'
+    ]
   })
 
   grunt.loadNpmTasks('grunt-webfont');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.registerTask('default', ['clean', 'webfont']);
 };

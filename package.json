@@ -11,21 +11,12 @@
   },
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-cli": "^0.1.13"
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-compass": "^1.0.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "n3n Amos",
-  "license": "ISC",
-  "sampleSvg": {
-    "src": [
-      "sample_svg/svg251/*.svg",
-      "sample_svg/svg50/*.svg"
-    ],
-    "engine": [
-      "fontforge",
-      "node"
-    ]
-  }
+  "author": "Amos",
+  "license": "ISC"
 }
